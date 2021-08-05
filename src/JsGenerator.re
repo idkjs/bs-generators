@@ -20,9 +20,9 @@ type fnU('a) = (. unit) => t('a);
 type fn('a) = unit => t('a);
 type fn1('a, 'b) = 'a => t('b);
 
-[@bs.send] external next: (t('a), unit) => value('a) = "";
-[@bs.send] external return: (t('a), Js.Undefined.t('a)) => value('a) = "";
-[@bs.send] external throw: (t('a), exn) => unit = "";
+[@bs.send] external next: (t('a), unit) => value('a) = "next";
+[@bs.send] external return: (t('a), Js.Undefined.t('a)) => value('a) = "return";
+[@bs.send] external throw: (t('a), exn) => unit = "throw";
 
 let simple = next => {
   let iterator =
